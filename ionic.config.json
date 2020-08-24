@@ -1,0 +1,7 @@
+{
+  "name": "biss",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
