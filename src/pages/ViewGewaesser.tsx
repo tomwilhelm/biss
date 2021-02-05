@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Message, getMessage } from '../data/messages';
+import { Message, getMessage } from '../data/gewaesser';
 import {
   IonBackButton,
   IonButtons,

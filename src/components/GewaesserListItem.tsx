@@ -4,7 +4,7 @@ import {
   IonLabel,
   IonNote
   } from '@ionic/react';
-import { Message } from '../data/messages';
+import { Message } from '../data/gewaesser';
 import './MessageListItem.css';
 
 interface MessageListItemProps {
