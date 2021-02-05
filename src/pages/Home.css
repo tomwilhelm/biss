@@ -1,0 +1,10 @@
+#header-background-color{
+    --background: #1976D2;
+}
+#center-logo-image{
+    width: 35vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

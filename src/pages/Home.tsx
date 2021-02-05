@@ -1,26 +1,30 @@
-import MessageListItem from '../components/MessageListItem';
+import GewaesserListItem from '../components/GewaesserListItem';
+import SearchFilter from '../components/SearchFilter';
 import React, { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { Item, getGewaessers } from '../data/gewaesser';
 import {
+  IonButton,
+  IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip,
   IonContent,
-  IonHeader,
-  IonList,
+  IonHeader, IonIcon, IonImg, IonItem, IonLabel,
+  IonList, IonModal,
   IonPage,
   IonRefresher,
-  IonRefresherContent,
+  IonRefresherContent, IonSearchbar, IonSelect, IonSelectOption,
   IonTitle,
   IonToolbar,
   useIonViewWillEnter
 } from '@ionic/react';
 import './Home.css';
+import biss from "../data/pictures/icons/logo.jpeg"
 
 const Home: React.FC = () => {
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [gewaesser, setGewaesser] = useState<Item[]>([]);
 
   useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
+    const gewaesser = getGewaessers();
+    setGewaesser(gewaesser);
   });
 
   const refresh = (e: CustomEvent) => {
@@ -29,32 +33,23 @@ const Home: React.FC = () => {
     }, 3000);
   };
 
-  return (
-    <IonPage id="home-page">
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonRefresher slot="fixed" onIonRefresh={refresh}>
-          <IonRefresherContent></IonRefresherContent>
-        </IonRefresher>
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
-        <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList>
-      </IonContent>
-    </IonPage>
-  );
+    return (
+        <IonPage id="home-page">
+          <IonHeader>
+            <IonToolbar id="header-background-color">
+              <IonImg id="center-logo-image" src={biss}/>
+            </IonToolbar>
+            <SearchFilter/>
+          </IonHeader>
+          <IonContent fullscreen>
+            <IonList>
+              <IonItem>
+                {gewaesser.map(g => <GewaesserListItem key={g.id} gewaesser={g}/>)}
+              </IonItem>
+            </IonList>
+          </IonContent>
+        </IonPage>
+    );
 };
 
 export default Home;

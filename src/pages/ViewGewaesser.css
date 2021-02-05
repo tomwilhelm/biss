@@ -38,3 +38,9 @@
 #view-message-page p {
   line-height: 22px;
 }
+
+#fish-icon {
+  width: 25vw;
+  display: block;
+  margin-left: -6vw;
+}

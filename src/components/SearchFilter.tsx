@@ -1,42 +1,42 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-    IonButton, IonHeader,
-    IonIcon,
+    IonButton, IonContent, IonHeader,
+    IonIcon, IonImg,
     IonItem,
     IonLabel,
     IonList,
-    IonModal, IonSearchbar,
+    IonModal, IonPage, IonSearchbar, IonChip,
     IonSelect,
-    IonSelectOption, IonTitle,
-    IonToolbar
+    IonSelectOption, IonTitle, IonListHeader,
+    IonToolbar, IonBadge
 } from "@ionic/react";
-import {fische, kanton, techniken} from "../data/gewaesser";
-import {funnelOutline} from "ionicons/icons";
+import {fische, kanton} from "../data/gewaesser";
+import {funnelOutline, closeOutline} from "ionicons/icons";
 import {Icon} from "ionicons/dist/types/components/icon/icon";
+import biss from "../data/pictures/icons/logo.jpeg";
+import GewaesserListItem from "./GewaesserListItem";
 
-const FilterView: React.FC = () => {
+const SearchFilter: React.FC = () => {
 
     const [showFilterModal, setShowFilterModal] = useState(false);
 
-    const fischArten = [];
-
-    for (var fischArt in fische) {
-        fischArten.push(<IonSelectOption value={fischArt}>{fischArt}</IonSelectOption>);
-    }
-
+    const [isOhneSana, setOhneSana] = useState(true);
+    const [isFreiangelrecht, setFreiangelrecht] = useState(true);
+    const [hasCampingplatz, setCampingplatz] = useState(true);
+    const [hasRestaurant, setRestaurant] = useState(true);
+    const [hasBootmiete, setBootmiete] = useState(true);
+    const [kantoneSelected, setKantoneSelected] = useState<string[]>([]);
     const kantone = [];
 
     for (var kantonSingle in kanton) {
-        kantone.push(<IonSelectOption value={kantonSingle}>{kantonSingle}</IonSelectOption>);
+        kantone.push(
+            <IonChip onClick={() => (kantoneSelected.includes(kantonSingle)) ? setKantoneSelected(kantoneSelected.filter((e) => e != kantonSingle)) : kantoneSelected.push(kantonSingle)} outline={!kantoneSelected.includes(kantonSingle)}>
+                <IonLabel> {kantonSingle} </IonLabel>
+            </IonChip>
+        );
     }
 
-    const alleTechniken = [];
-
-    for (var technikSingle in techniken) {
-        alleTechniken.push(<IonSelectOption value={technikSingle}>{technikSingle}</IonSelectOption>);
-    }
-
-  return (
+    return (
       <div>
           <IonSearchbar placeholder={"Suche nach Gewässer"} animated>
               <IonButton color={"light"} onClick={() => setShowFilterModal(true)} style={{height: "100%"}}>
@@ -45,76 +45,57 @@ const FilterView: React.FC = () => {
           </IonSearchbar>
 
           <IonModal isOpen={showFilterModal}>
-            <IonToolbar>
-                <IonTitle> Gewässer Filterung </IonTitle>
-            </IonToolbar>
-            <IonList>
-              <IonItem>
-                  <IonLabel>Fisch Art</IonLabel>
-                  <IonSelect multiple={true}>
-                      {fischArten}
-                  </IonSelect>
-              </IonItem>
+            <IonHeader>
+                <IonToolbar id="header-background-color">
+                    <IonTitle color="light">
+                        Gewässer Filterung
+                        <IonBadge color="medium">22</IonBadge>
+                    </IonTitle>
+                </IonToolbar>
+            </IonHeader>
 
-              <IonItem>
-                  <IonLabel>Kanton</IonLabel>
-                  <IonSelect multiple={true}>
-                      {kantone}
-                  </IonSelect>
-              </IonItem>
+          <IonContent>
+              <p></p>
+              <IonListHeader>
+                  Eigenschaften
+              </IonListHeader>
+              <p></p>
+              <div style={{marginLeft: "5%"}}>
+                  <IonChip onClick={() => setOhneSana(!isOhneSana)} outline={isOhneSana} color="primary">
+                      <IonLabel> z.T. ohne Sana </IonLabel>
+                  </IonChip>
+                  <IonChip onClick={() => setFreiangelrecht(!isFreiangelrecht)} outline={isFreiangelrecht} color="warning">
+                      <IonLabel> Freiangelrecht </IonLabel>
+                  </IonChip>
+                  <IonChip onClick={() => setCampingplatz(!hasCampingplatz)} outline={hasCampingplatz} color="tertiary">
+                      <IonLabel> Campingplatz </IonLabel>
+                  </IonChip>
+                  <IonChip onClick={() => setRestaurant(!hasRestaurant)} outline={hasRestaurant} color="success">
+                      <IonLabel> Restaurant </IonLabel>
+                  </IonChip>
+                  <IonChip onClick={() => setBootmiete(!hasBootmiete)} outline={hasBootmiete} color="secondary">
+                      <IonLabel> Bootmiete </IonLabel>
+                  </IonChip>
+              </div>
 
-              <IonItem>
-                  <IonLabel>Sana</IonLabel>
-                  <IonSelect>
-                      <IonSelectOption> z.T. ohne Sana </IonSelectOption>
-                      <IonSelectOption> Sana notwendig </IonSelectOption>
-                  </IonSelect>
-              </IonItem>
+              <IonListHeader>
+                  Zielfische
+              </IonListHeader>
+              <p></p>
 
-              <IonItem>
-                  <IonLabel>Freiangelrecht</IonLabel>
-                  <IonSelect>
-                      <IonSelectOption> Ja </IonSelectOption>
-                      <IonSelectOption> Nein </IonSelectOption>
-                  </IonSelect>
-              </IonItem>
+              <IonListHeader>
+                  Kantone
+              </IonListHeader>
+              <p></p>
+              <div style={{marginLeft: "5%"}}>
+                  {kantone}
+              </div>
 
-              <IonItem>
-                  <IonLabel>Campingplatz</IonLabel>
-                  <IonSelect>
-                      <IonSelectOption> Vorhanden </IonSelectOption>
-                      <IonSelectOption> Nicht vorhanden </IonSelectOption>
-                  </IonSelect>
-              </IonItem>
-
-              <IonItem>
-                  <IonLabel>Restaurant</IonLabel>
-                  <IonSelect>
-                      <IonSelectOption> Vorhanden </IonSelectOption>
-                      <IonSelectOption> Nicht vorhanden </IonSelectOption>
-                  </IonSelect>
-              </IonItem>
-
-              <IonItem>
-                  <IonLabel>Bootmiete</IonLabel>
-                  <IonSelect>
-                      <IonSelectOption> Vorhanden </IonSelectOption>
-                      <IonSelectOption> Nicht vorhanden </IonSelectOption>
-                  </IonSelect>
-              </IonItem>
-
-              <IonItem>
-                  <IonLabel>Techniken</IonLabel>
-                  <IonSelect multiple={true}>
-                      {alleTechniken}
-                  </IonSelect>
-              </IonItem>
-
-          </IonList>
+          </IonContent>
           <IonButton onClick={() => setShowFilterModal(false)} style={{marginLeft: "4%", width: "92%", marginBottom: "15px"}}> Schliessen </IonButton>
         </IonModal>
       </div>
   );
 };
 
-export default FilterView;
+export default SearchFilter;

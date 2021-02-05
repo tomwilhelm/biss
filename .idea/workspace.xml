@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794a60bf-e24d-476c-b3b8-220f4fabdcd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/biss.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MessageListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/seen.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SearchFilter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/gewaesser/Obersee/main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/fische/aesche.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/fische/bachforelle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/fische/egli.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/fische/felchen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/fische/hecht.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/fische/seeforelle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/ion-icons/filter-outline.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/pictures/icons/logo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MessageListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GewaesserListItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MessageListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GewaesserListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/messages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/gewaesser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ViewMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ViewMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ViewMessage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ViewGewaesser.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ViewMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ViewGewaesser.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,23 +31,38 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gYcMyBJHaqGYwx77ID5k2pGLNA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/data/pictures/icons" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data/pictures/icons/ion-icons" />
+      <recent name="$PROJECT_DIR$/src/data/pictures/icons" />
+      <recent name="$PROJECT_DIR$/src/data/pictures/gewaesser/Obersee" />
+      <recent name="$PROJECT_DIR$/src/data/pictures/gewaesser" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/data/pictures/icons" />
+      <recent name="$PROJECT_DIR$/src/data/pictures/icons/fische" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -62,17 +86,72 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598294921409</updated>
-      <workItem from="1598294923121" duration="341000" />
+      <workItem from="1598294923121" duration="629000" />
+      <workItem from="1598295554800" duration="2517000" />
+      <workItem from="1598336214357" duration="9733000" />
+      <workItem from="1598353412970" duration="6561000" />
+      <workItem from="1598360439347" duration="208000" />
+      <workItem from="1598366266577" duration="2611000" />
+      <workItem from="1598374404106" duration="4687000" />
+      <workItem from="1598557334516" duration="121000" />
+      <workItem from="1598792148143" duration="2942000" />
+      <workItem from="1598796096851" duration="3067000" />
+      <workItem from="1598940816586" duration="4982000" />
+      <workItem from="1598948629049" duration="4562000" />
+      <workItem from="1598956553221" duration="6968000" />
+      <workItem from="1599390310909" duration="4969000" />
+      <workItem from="1599545713134" duration="10030000" />
+      <workItem from="1599559702955" duration="6935000" />
+      <workItem from="1599757324368" duration="1163000" />
+      <workItem from="1599759360616" duration="2971000" />
+      <workItem from="1600785955534" duration="121000" />
+      <workItem from="1601127786040" duration="849000" />
+      <workItem from="1601211838232" duration="970000" />
+      <workItem from="1601243435042" duration="3060000" />
+      <workItem from="1601384464295" duration="3732000" />
+      <workItem from="1601388904730" duration="2721000" />
+      <workItem from="1601902143335" duration="759000" />
+      <workItem from="1602082056942" duration="3163000" />
+      <workItem from="1602429074108" duration="2777000" />
+      <workItem from="1604065883742" duration="1665000" />
+      <workItem from="1604398043265" duration="3854000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="614" y="126" width="692" height="792" key="find.popup" timestamp="1598295131892">
+    <state x="414" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598353474428">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="614" y="126" width="692" height="792" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1598295131892" />
+    <state x="414" y="144" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1598353474428" />
+    <state x="689" y="236" width="528" height="491" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598800111310">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="689" y="236" width="528" height="491" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1598800111310" />
+    <state x="739" y="244" width="428" height="474" key="FileChooserDialogImpl" timestamp="1599568482398">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="739" y="244" width="428" height="474" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1599568482398" />
+    <state x="735" y="424" width="439" height="150" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599564095078">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="735" y="424" width="439" height="150" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1599564095078" />
+    <state x="614" y="126" width="692" height="792" key="find.popup" timestamp="1598354790335">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="614" y="126" width="692" height="792" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1598354790335" />
+    <state x="622" y="241" key="run.anything.popup" timestamp="1598951282696">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="622" y="241" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1598951282696" />
+    <state x="623" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1602084061025">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602084061025" />
   </component>
 </project>
